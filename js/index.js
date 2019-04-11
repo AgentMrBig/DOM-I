@@ -40,3 +40,32 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let roundImg = document.getElementById("cta-img");
+roundImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+// getting and setting the button
+let btns = document.getElementsByTagName("BUTTON")[0];
+//btns.setAttribute('innerHTML', siteContent["cta"]["button"]);
+btns.innerHTML = siteContent["cta"]["button"];
+
+//adding navigation
+//Getting all the a elements, which happen to be only in the navs
+var as = document.getElementsByTagName("a");
+var navPrefix = "nav-item-";
+//loop through nav links assigning the correct json data to each link
+for(let i = 1; i < as.length; i++){
+  as[i].innerHTML = siteContent["nav"][`${navPrefix + i}`];
+}
+
+//adding cta-text
+var ctaText = document.getElementsByClassName("cta-text");
+
+ctaText = ctaText[0].getElementsByTagName("H1");
+ctaText[0].innerHTML = siteContent["cta"]["h1"];
+
+
+
