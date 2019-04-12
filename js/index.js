@@ -59,7 +59,19 @@ var navPrefix = "nav-item-";
 //loop through nav links assigning the correct json data to each link
 for(let i = 1; i < as.length; i++){
   as[i].innerHTML = siteContent["nav"][`${navPrefix + i}`];
+  //Task 4
+  as[i].setAttribute("style", "color: green;");
 }
+var firstNewItem = document.createElement("A");
+firstNewItem.textContent = "FirstItem";
+console.log(firstNewItem);
+as[0].appendChild(firstNewItem);
+
+var secondNewItem = document.createElement("A");
+secondNewItem.textContent = "SecondItem";
+console.log(secondNewItem);
+as[as.length  - 1].prepend(secondNewItem);
+
 
 //adding cta-text
 var ctaText = document.getElementsByClassName("cta-text");
